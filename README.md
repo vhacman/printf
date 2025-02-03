@@ -1,4 +1,5 @@
 Custom printf Implementation
+
 This project is a custom implementation of the C printf() function. The objective is to replicate its behavior, handling various types of arguments and printing them correctly according to their specified format. The core functionality should match printf() while excluding buffer management.
 
 Requirements
