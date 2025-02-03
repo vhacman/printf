@@ -1,9 +1,12 @@
-This project consists of replicating the behavior of the printf() function in C. It is not necessary to implement the buffer management of the original function. The function must handle the following types of parameters:
+Custom printf Implementation
+This project is a custom implementation of the C printf() function. The objective is to replicate its behavior, handling various types of arguments and printing them correctly according to their specified format. The core functionality should match printf() while excluding buffer management.
 
-Character type variables.
-String type variables.
-Integer type variables.
-Unsigned integer type variables.
-Hexadecimal integer type variables (both uppercase and lowercase).
-Pointer type variables.
+Requirements
+Your custom printf function must be able to handle the following types of arguments:
 
+Character type variables (%c)
+String type variables (%s)
+Integer type variables (%d or %i)
+Unsigned integer type variables (%u)
+Hexadecimal integer type variables (both uppercase and lowercase, e.g., %x and %X)
+Pointer type variables (%p)
