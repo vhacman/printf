@@ -6,7 +6,7 @@
 /*   By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:44:19 by vhacman           #+#    #+#             */
-/*   Updated: 2025/02/04 12:06:35 by vhacman          ###   ########.fr       */
+/*   Updated: 2025/02/04 12:51:27 by vhacman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,18 @@
 
 //Buffer of 4096 bytes
 # define BUF_SIZE 4096
+# define FLAGS "+ 0-#"
+# define NUMBERS "0123456789"
+# define SPECIFIERS "cspdiuxX"
 /*We have to create a struct to contain
 All the bools [+-' '0#] [width] [.precision]*/
+typedef enum
+{
+	BASE_2 = 2,
+	BASE_8 = 8,
+	BASE_10 = 10,
+	BASE_16 = 16,
+}	e_base;
 typedef struct s_format
 {
 	bool	left_justified;//true if output should be left-aligned (- flag)
@@ -33,6 +43,7 @@ typedef struct s_format
 	char	specifier;// The format specifier
 	int		width_value;// Minimum width for the output
 	int		precision_value;// Precision for floating-point numbers or strings
+	e_base	base;
 }	t_format;
 
 typedef struct s_data
@@ -54,4 +65,5 @@ typedef	enum
 
 //************************prototypes*******************************//
 void	*ft_memset(void *b, int c, size_t count);
+char	*ft_strchr(const char *s, int c);
 #endif
