@@ -6,7 +6,7 @@
 #    By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 08:27:30 by vhacman           #+#    #+#              #
-#    Updated: 2025/02/04 08:57:39 by vhacman          ###   ########.fr        #
+#    Updated: 2025/02/04 13:37:12 by vhacman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
+#pulizia
 clean: 
 	$(RM) $(OBJS)
 fclean: clean

@@ -6,7 +6,7 @@
 /*   By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:44:19 by vhacman           #+#    #+#             */
-/*   Updated: 2025/02/04 12:51:27 by vhacman          ###   ########.fr       */
+/*   Updated: 2025/02/04 13:37:14 by vhacman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <limits.h>
+
+#define RESET   "\033[0m"
+#define BOLD    "\033[1m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define WHITE   "\033[37m"
 
 //Buffer of 4096 bytes
 # define BUF_SIZE 4096
@@ -66,4 +76,7 @@ typedef	enum
 //************************prototypes*******************************//
 void	*ft_memset(void *b, int c, size_t count);
 char	*ft_strchr(const char *s, int c);
+int		ft_parse_format(t_data *data);
+void    ft_write_buffer(t_data *data, char c);
+void    ft_flush_buffer(t_data *data);
 #endif
