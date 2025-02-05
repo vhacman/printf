@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 14:33:10 by vhacman           #+#    #+#             */
-/*   Updated: 2025/02/05 17:20:00 by vhacman          ###   ########.fr       */
+/*   Created: 2025/02/05 11:01:53 by vhacman           #+#    #+#             */
+/*   Updated: 2025/02/05 17:01:53 by vhacman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-int     ft_printf(const char *format, ...);
-int     ft_putchar(char c);
-int     ft_putnbr(int n);
-int     ft_putstr(char *str);
-int     ft_putnbr_unsigned(unsigned int n);
-int     ft_putnbr_hex(unsigned int n, int upper);
-int     ft_putptr(void *ptr);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+void	ft_putnbr(int n);
+int	ft_putstr(char *str);
+int	ft_putnbr_unsigned(unsigned int n);
+int	ft_putnbr_hex(unsigned int n, int upper);
+int	ft_putptr(void *ptr);
 int	handle_conversion(char specifier, va_list args);
 
 #endif

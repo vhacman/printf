@@ -36,7 +36,7 @@ int	handle_conversion(char specifier, va_list args)
 	else if (specifier == 'x')
 		return (ft_putnbr_hex(va_arg(args, unsigned int), 0));
 	else if (specifier == 'X')
-		return ((ft_putnbr_hex(va_arg, unsigned int), 1));
+		return ((ft_putnbr_hex(va_arg(args, unsigned int), 1)));
 	else if (specifier == '%')
 		return (ft_putchar('%'));
 	return (0);
