@@ -90,6 +90,7 @@ int	ft_putstr(char *str)
  * we convert it to unsigned long long to ensure the address can be 
  * handled as a large number on any system.
  */
+ /*
 int	ft_putptr(void *ptr)
 {
 	unsigned long long int	p;
@@ -118,4 +119,37 @@ int	ft_putptr(void *ptr)
 		count = count + ft_putnbr_hex(p, 0);
 	}
 	return (count);
+}*/
+static int	ft_put_ptr(unsigned long ptr)
+{
+	char	*str;
+	int		count;
+
+	str = "0123456789abcdef";
+	count = 0;
+	if (ptr >= 16)
+		count += ft_put_ptr(ptr / 16);  // Ricorsione per stampare ogni cifra esadecimale
+	write(1, &str[ptr % 16], 1);  // Stampa il carattere esadecimale corrispondente
+	count++;
+	return (count);
 }
+
+int	ft_putptr(void *ptr)
+{
+	unsigned long p;
+	int count;
+
+	count = 0;
+	if (ptr == NULL)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	p = (unsigned long)ptr;
+	write(1, "0x", 2);  // Stampiamo "0x"
+	count += 2;
+	count += ft_put_ptr(p);  // Usare ft_put_ptr per stampare il valore esadecimale
+	return (count);
+}
+
+
