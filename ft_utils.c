@@ -82,6 +82,14 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
+/*
+ *La funzione `ft_putptr` stampa un indirizzo di memoria sotto 
+ *forma di stringa esadecimale,  *prefissata dal simbolo "0x". 
+ *Se l'indirizzo passato è NULL, stampa la stringa "(nil)".
+ *Altrimenti, converte l'indirizzo in esadecimale e lo stampa. 
+ *La funzione restituisce il numero totale di caratteri stampati,
+ *inclusi "0x" e l'indirizzo esadecimale.
+ */
 int	ft_putptr(void *ptr)
 {
 	unsigned long	p;
