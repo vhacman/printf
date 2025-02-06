@@ -14,26 +14,29 @@
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	(write(1, &c, 1));
+	return (1);
 }
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
+	int	count;
+
+	count = 0;
 	if (n == -2147483648)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		count = count + write(1, "-2147483648", 11);
+		return (count);
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		count = count + ft_putchar('-');
 		n = -n;
 	}
 	if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
-	}
+		count = count + ft_putnbr(n / 10);
+	count = count + ft_putchar(n % 10 + '0');
+	return (count);
 }
 
 /*the function returns an int representing the number of charachters printed.
@@ -89,15 +92,20 @@ int	ft_putstr(char *str)
  */
 int	ft_putptr(void *ptr)
 {
-	unsigned long long	p;
+	size_t	p;
 	int					count;
 
-	p = (unsigned long long)ptr;
 	count = 0;
+	if (ptr == NULL)
+	{
+		count += ft_putstr("0x0");
+		return (count);
+	}
+	p = (size_t)ptr;
 	count = count + ft_putstr("0x");
 	if (p == 0)
-		count = count + ft_putchar('0');
+		count += ft_putchar('0');
 	else
-		count = count + ft_putnbr_hex(p, 0);
+		count += ft_putnbr_hex(p, 0);
 	return (count);
 }

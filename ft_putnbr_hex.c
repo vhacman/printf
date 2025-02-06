@@ -17,12 +17,21 @@
  * It is a recursive helper function that prints an unsigned integer in 
  * hexadecimal representation. 
  */
-static void	ft_putnbr_hex_helper(unsigned int n, int upper,
+static int	ft_putnbr_hex_helper(unsigned int n, int upper,
 					char *hex_digits)
 {
+	int	count;
+
+	count = 0;
+	if(n == 0 && count == 0)
+	{
+		count += ft_putchar('0');
+		return (count);
+	}
 	if (n >= 16)
-		ft_putnbr_hex_helper (n / 16, upper, hex_digits);
-	ft_putchar(hex_digits[n % 16]);
+		count += ft_putnbr_hex_helper (n / 16, upper, hex_digits);
+	count += ft_putchar(hex_digits[n % 16]);
+	return(count);
 }
 
 /* 
@@ -38,11 +47,13 @@ static void	ft_putnbr_hex_helper(unsigned int n, int upper,
 int	ft_putnbr_hex(unsigned int n, int upper)
 {
 	char	*hex_digits;
+	int	count;
 
-	if (upper == 1)
+	count = 0;	
+	if (upper)
 		hex_digits = "0123456789ABCDEF";
 	else
 		hex_digits = "0123456789abcdef";
-	ft_putnbr_hex_helper(n, upper, hex_digits);
-	return (0);
+	count = ft_putnbr_hex_helper(n, upper, hex_digits);
+	return (count);
 }
