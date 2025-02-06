@@ -23,7 +23,7 @@ static int	ft_putnbr_hex_helper(unsigned int n, int upper,
 	int	count;
 
 	count = 0;
-	if(n == 0 && count == 0)
+	if (n == 0 && count == 0)
 	{
 		count += ft_putchar('0');
 		return (count);
@@ -31,7 +31,7 @@ static int	ft_putnbr_hex_helper(unsigned int n, int upper,
 	if (n >= 16)
 		count += ft_putnbr_hex_helper (n / 16, upper, hex_digits);
 	count += ft_putchar(hex_digits[n % 16]);
-	return(count);
+	return (count);
 }
 
 /* 
@@ -47,9 +47,9 @@ static int	ft_putnbr_hex_helper(unsigned int n, int upper,
 int	ft_putnbr_hex(unsigned int n, int upper)
 {
 	char	*hex_digits;
-	int	count;
+	int		count;
 
-	count = 0;	
+	count = 0;
 	if (upper)
 		hex_digits = "0123456789ABCDEF";
 	else

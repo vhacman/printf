@@ -93,7 +93,7 @@ int	ft_putstr(char *str)
 int	ft_putptr(void *ptr)
 {
 	size_t	p;
-	int					count;
+	int		count;
 
 	count = 0;
 	if (ptr == NULL)
