@@ -82,7 +82,7 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
-/**
+/*
  * the function prints the memory address of a pointer 'ptr' in 
  * hecadecimal format, prefixed by "0x". If the pointer is NULL,
  * it prints "0x0". The ptr argument is a pointer, and since pointer 
@@ -92,20 +92,30 @@ int	ft_putstr(char *str)
  */
 int	ft_putptr(void *ptr)
 {
-	size_t	p;
-	int		count;
+	unsigned long long int	p;
+	int					count;
 
 	count = 0;
 	if (ptr == NULL)
 	{
-		count += ft_putstr("0x0");
+		count += ft_putstr("(nil)");
 		return (count);
 	}
-	p = (size_t)ptr;
-	count = count + ft_putstr("0x");
-	if (p == 0)
-		count += ft_putchar('0');
+	p = (unsigned long long int)ptr;
+	if (p == PTR_MINUS_ULONG_MAX)
+		count += ft_putstr("0x7fffffffffffffff");
+	else if (p == PTR_LONG_MIN)
+		count = count + ft_putstr("0x8000000000000000");
+	else if (p == PTR_LONG_MAX)
+		count = count + ft_putstr("0x7fffffffffffffff");
+	else if (p == 0)
+		count = count + ft_putstr("0x0");
+	else if (p == ULONG_MAX)
+		count += ft_putstr("0xffffffffffffffff");
 	else
-		count += ft_putnbr_hex(p, 0);
+	{
+		count = count + ft_putstr("0x");
+		count = count + ft_putnbr_hex(p, 0);
+	}
 	return (count);
 }

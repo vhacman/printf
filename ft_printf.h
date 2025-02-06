@@ -13,13 +13,18 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <limits.h>
+//# include <limits.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdarg.h>
+
+# define PTR_LONG_MIN 0x8000000000000000
+# define PTR_LONG_MAX 0x7fffffffffffffff
+# define PTR_MINUS_ULONG_MAX ULONG_MAX
+# define ULONG_MAX 0xffffffffffffffff
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
