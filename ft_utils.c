@@ -17,7 +17,7 @@ int	ft_putchar(char c)
 	return (write(1, &c, 1));
 }
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	if (n < 0)
 	{
@@ -27,11 +27,12 @@ void	ft_putnbr(int n)
 			ft_putchar('2');
 			n = -147483648;
 		}
-		n *= -1;
+		n = n * -n;
 	}
 	if (n / 10)
 		ft_putnbr(n / 10);
 	ft_putchar(n % 10 + '0');
+	return (0);
 }
 
 /*the function returns an int representing the number of charachters printed.
@@ -40,19 +41,17 @@ recursively (n / 10) to print the digit left.
 The function than extracts the last digit of n (n % 10) and converts
 to its corrisponding ASCII character (+ '0')
 
-
 This function correctly prints unsigned integers and counts the number 
 of characters printed. It efficiently processes multi-digit numbers using 
-recursion, ensuring they are printed in the correct order.
-*/
+recursion, ensuring they are printed in the correct order.*/
 int	ft_putnbr_unsigned(unsigned int n)
 {
 	int	count;
 
 	count = 0;
 	if (n >= 10)
-		count += ft_putnbr_unsigned(n / 10);
-	count += ft_putchar(n % 10 + '0');
+		count = count + ft_putnbr_unsigned(n / 10);
+	count = count + ft_putchar(n % 10 + '0');
 	return (count);
 }
 
@@ -72,7 +71,10 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 		return (ft_putstr("(null)"));
 	while (str[count])
+	{
 		ft_putchar(str[count]);
+		count++;
+	}
 	return (count);
 }
 
@@ -91,10 +93,10 @@ int	ft_putptr(void *ptr)
 
 	p = (unsigned long long)ptr;
 	count = 0;
-	count += ft_putstr("0x");
+	count = count + ft_putstr("0x");
 	if (p == 0)
-		count += ft_putchar('0');
+		count = count + ft_putchar('0');
 	else
-		count += ft_putnbr_hex(p, 0);
+		count = count + ft_putnbr_hex(p, 0);
 	return (count);
 }

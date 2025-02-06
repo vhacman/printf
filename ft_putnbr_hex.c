@@ -39,7 +39,7 @@ int	ft_putnbr_hex(unsigned int n, int upper)
 {
 	char	*hex_digits;
 
-	if (upper)
+	if (upper == 1)
 		hex_digits = "0123456789ABCDEF";
 	else
 		hex_digits = "0123456789abcdef";
