@@ -99,10 +99,16 @@ gcc -Wall -Wextra -Werror ft_printf.c libftprintf.a
 - [Printf Manual](https://man7.org/linux/man-pages/man3/printf.3.html)
 - [Variadic Functions](https://en.cppreference.com/w/c/variadic)
 
-## ⚖️ License
-This project is part of the 42 School curriculum. Please refer to their guidelines for usage and distribution.
+## GitHub Stats 📊
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevGabi98&show_icons=true&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=DevGabi98&layout=compact&theme=radical)
 
 ## 👤 Author
 **vhacman**
 - Github: [@DevGabi98](https://github.com/DevGabi98)
 - 42 Intra: [vhacman](https://profile.intra.42.fr/)
+
+
+## ⚖️ License
+This project is part of the 42 School curriculum. Please refer to their guidelines for usage and distribution.
+
