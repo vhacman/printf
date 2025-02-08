@@ -104,5 +104,5 @@ This project is part of the 42 School curriculum. Please refer to their guidelin
 
 ## 👤 Author
 **vhacman**
-- Github: [@vhacman](https://github.com/vhacman)
+- Github: [@DevGabi98](https://github.com/DevGabi98)
 - 42 Intra: [vhacman](https://profile.intra.42.fr/)
