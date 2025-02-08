@@ -1,4 +1,4 @@
-# ft_printf
+# ✨✨✨ ft_printf ✨✨✨
 ![42 Roma Luiss](https://img.shields.io/badge/42-Roma_Luiss-green)
 ![Score](https://img.shields.io/badge/Score-In_Progress-yellow)
 
