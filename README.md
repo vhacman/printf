@@ -1,6 +1,7 @@
 # ✨✨✨ ft_printf ✨✨✨
 ![42 Roma Luiss](https://img.shields.io/badge/42-Roma_Luiss-green)
 ![Score](https://img.shields.io/badge/Score-100-greem)
+![Created](https://img.shields.io/badge/Created-February_2025-blue)
 
 A custom implementation of the printf function for 42 School. This project is part of the Common Core curriculum.
 
