@@ -1,114 +1,144 @@
-# ✨✨✨ ft_printf ✨✨✨
+# ft_printf
+
 ![42 Roma Luiss](https://img.shields.io/badge/42-Roma_Luiss-green)
-![Score](https://img.shields.io/badge/Score-100-greem)
+![Score](https://img.shields.io/badge/Score-100-green)
 ![Created](https://img.shields.io/badge/Created-February_2025-blue)
 ![Status](https://img.shields.io/badge/Status-Success-violet)
 
-## 📝 Description
+## 📝 Descrizione del Progetto
 
-`ft_printf` is a reimplementation of the standard C library function `printf`. It handles various format specifiers and returns the number of characters printed. This implementation supports the following format specifiers:
+`ft_printf` è una reimplementazione della funzione `printf` della libreria standard C. Gestisce vari specificatori di formato e restituisce il numero di caratteri stampati.
 
-- `%c` - Single character
-- `%s` - String
-- `%p` - Pointer address in hexadecimal
-- `%d` - Decimal number
-- `%i` - Integer in base 10
-- `%u` - Unsigned decimal number
-- `%x` - Number in lowercase hexadecimal
-- `%X` - Number in uppercase hexadecimal
-- `%%` - Percent sign
+### Specificatori di Formato Supportati:
 
-## 🚀 Getting Started
+- `%c` - Carattere singolo
+- `%s` - Stringa
+- `%p` - Indirizzo puntatore in esadecimale
+- `%d` - Numero decimale
+- `%i` - Intero in base 10
+- `%u` - Numero decimale senza segno
+- `%x` - Numero esadecimale minuscolo
+- `%X` - Numero esadecimale maiuscolo
+- `%%` - Simbolo percentuale
 
-### Prerequisites
-- GCC compiler
+## 🚀 Come Iniziare
+
+### Prerequisiti
+- Compilatore GCC
 - Make
 
-### Installation
-1. Clone the repository
+### Installazione
+
+1. Clona il repository
 ```bash
 git clone https://github.com/vhacman/ft_printf.git
 cd ft_printf
 ```
 
-2. Compile the library
+2. Compila la libreria
 ```bash
 make
 ```
 
-This will create a `libftprintf.a` file.
+Questo creerà il file `libftprintf.a`.
 
-## 💻 Usage
+## 💻 Utilizzo
 
-Include the header in your C file:
+Includi l'header nel tuo file C:
 ```c
 #include "ft_printf.h"
 ```
 
-Example usage:
+Esempio di utilizzo:
 ```c
 int main(void)
 {
-    ft_printf("Character: %c\n", 'A');
-    ft_printf("String: %s\n", "Hello, 42!");
-    ft_printf("Pointer: %p\n", (void *)0x12345678);
-    ft_printf("Decimal: %d\n", 42);
-    ft_printf("Integer: %i\n", -42);
-    ft_printf("Unsigned: %u\n", 4294967295);
-    ft_printf("Hexadecimal: %x\n", 255);
-    ft_printf("HEXADECIMAL: %X\n", 255);
-    ft_printf("Percent: %%\n");
+    ft_printf("Carattere: %c\n", 'A');
+    ft_printf("Stringa: %s\n", "Hello, 42!");
+    ft_printf("Puntatore: %p\n", (void *)0x12345678);
+    ft_printf("Decimale: %d\n", 42);
+    ft_printf("Intero: %i\n", -42);
+    ft_printf("Senza segno: %u\n", 4294967295);
+    ft_printf("Esadecimale: %x\n", 255);
+    ft_printf("ESADECIMALE: %X\n", 255);
+    ft_printf("Percentuale: %%\n");
     return (0);
 }
 ```
 
-### Compilation with Your Program
+### Compilazione con il Tuo Programma
 ```bash
-gcc your_program.c libftprintf.a -o program
+gcc tuo_programma.c libftprintf.a -o programma
 ```
 
-## 🛠️ Implementation Details
+## 🛠️ Dettagli Implementativi
 
-The project consists of several components:
+Il progetto è composto da diversi componenti:
 
-- `ft_printf.c` - Main printf function and format specifier handler
-- `ft_utils.c` - Utility functions for number and character printing
-- `ft_putnbr_hex.c` - Hexadecimal number conversion and printing
-- `ft_printf.h` - Header file with function prototypes and includes
+- `ft_printf.c` - Funzione printf principale e gestore dei specificatori di formato
+- `ft_utils.c` - Funzioni di utilità per la stampa di numeri e caratteri
+- `ft_putnbr_hex.c` - Conversione e stampa di numeri esadecimali
+- `ft_printf.h` - File header con prototipi delle funzioni e inclusioni
 
-### Key Features
-- Handles all basic format specifiers
-- Manages null pointers and edge cases
-- Returns the exact number of characters printed
-- Uses variadic functions for argument handling
-- Implements recursive number printing for different bases
+### Caratteristiche Principali
+- Gestione di tutti gli specificatori di formato base
+- Gestione di puntatori null e casi limite
+- Restituzione del numero esatto di caratteri stampati
+- Utilizzo di funzioni variadiche per la gestione degli argomenti
+- Implementazione di stampa numerica ricorsiva per diverse basi
 
 ## ⚙️ Testing
 
-To test the implementation:
-1. Uncomment the main function in ft_printf.c
-2. Compile with test flags
+Per testare l'implementazione:
+1. Decommenta la funzione main in ft_printf.c
+2. Compila con i flag di test
 ```bash
 make
 gcc -Wall -Wextra -Werror ft_printf.c libftprintf.a
 ./a.out
 ```
 
-## 📚 Resources
+## 📚 Risorse
 - [42 School](https://42.fr/)
-- [Printf Manual](https://man7.org/linux/man-pages/man3/printf.3.html)
-- [Variadic Functions](https://en.cppreference.com/w/c/variadic)
+- [Manuale Printf](https://man7.org/linux/man-pages/man3/printf.3.html)
+- [Funzioni Variadiche](https://en.cppreference.com/w/c/variadic)
 
-## GitHub Stats 📊
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevGabi98&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=DevGabi98&layout=compact&theme=radical)
+## 🔍 Makefile
 
-## 👤 Author
+```makefile
+NAME = libftprintf.a
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
+RM = rm -f
+AR = ar
+ARFLAGS = rcs
+
+SRC = ft_printf.c ft_utils.c ft_putnbr_hex.c
+OBJS = $(SRC:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+    ar rcs $(NAME) $(OBJS)
+
+%.o: %.c
+    $(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+    $(RM) $(OBJS)
+
+fclean: clean
+    $(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+```
+
+## 👤 Autore
 **vhacman**
 - Github: [@DevGabi98](https://github.com/DevGabi98)
 - 42 Intra: [vhacman](https://profile.intra.42.fr/)
 
-
-## ⚖️ License
-This project is part of the 42 School curriculum. Please refer to their guidelines for usage and distribution.
-
+## ⚖️ Licenza
+Questo progetto fa parte del curriculum della 42 School. Si prega di fare riferimento alle loro linee guida per l'utilizzo e la distribuzione.
