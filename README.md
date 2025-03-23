@@ -1,5 +1,5 @@
 # ft_printf
-
+[![ft_printf](https://github.com/vhacman/printf/actions/workflows/main.yml/badge.svg)](https://github.com/vhacman/printf/actions/workflows/main.yml)
 ![42 Roma Luiss](https://img.shields.io/badge/42-Roma_Luiss-green)
 ![Score](https://img.shields.io/badge/Score-100-green)
 ![Created](https://img.shields.io/badge/Created-February_2025-blue)
