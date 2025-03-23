@@ -6,11 +6,11 @@
 #    By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 08:27:30 by vhacman           #+#    #+#              #
-#    Updated: 2025/02/05 17:00:15 by vhacman          ###   ########.fr        #
+#    Updated: 2025/03/23 13:44:52 by vhacman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = printf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
