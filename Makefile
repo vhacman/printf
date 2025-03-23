@@ -6,39 +6,48 @@
 #    By: vhacman <vhacman@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 08:27:30 by vhacman           #+#    #+#              #
-#    Updated: 2025/03/23 13:44:52 by vhacman          ###   ########.fr        #
+#    Updated: 2025/03/23 13:50:37 by vhacman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
-RM = rm -f
-AR = ar
-ARFLAGS = rcs
+# ========================== VARIABLES ========================== #
 
-# Lista file sorgente (modifica questi se hai più file .c)
-SRC = ft_printf.c ft_utils.c ft_putnbr_hex.c
-OBJS = $(SRC:.c=.o)
+NAME		= printf.a
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -f
+AR			= ar
+ARFLAGS		= rcs
 
-# Target
+SRC_DIR		= src
+OBJ_DIR		= obj
+INC_DIR		= includes
+
+SRC			= $(wildcard $(SRC_DIR)/*.c)
+OBJS		= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
+
+# ========================== RULES ========================== #
+
 all: $(NAME)
+	@echo "✨ (\033[36mft_printf\033[0m) compiled into \033[32m$(NAME)\033[0m with style and zero warnings. 💅"
 
-# Crea libreria statica
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@$(AR) $(ARFLAGS) $@ $^
 
-# Compila un file .c in un file .o
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	@echo "📦 Compiled: $<"
 
-# Pulizia
 clean:
-	$(RM) $(OBJS)
+	@$(RM) -r $(OBJ_DIR)
+	@$(RM) $(NAME)
+	@echo "🧹 Object files and \033[31m$(NAME)\033[0m deleted. Clean workspace. ✨"
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo "💀 Full cleanup complete. No trace left of \033[35mft_printf\033[0m."
 
 re: fclean all
+	@echo "🔄 Rebuilt everything from scratch. \033[36mft_printf\033[0m is reborn. 🚀"
 
 .PHONY: all clean fclean re
