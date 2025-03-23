@@ -1,11 +1,11 @@
 # ===============================================================
-# 📄 GitHub Actions Workflow - ft_printf CI
+# 📄 GitHub Actions Workflow - ft_printf
 #
 # Questo workflow si attiva su ogni push o pull request.
 # Compila il progetto con make e verifica che make fclean funzioni.
 # ===============================================================
 
-name: ft_printf CI
+name: ft_printf
 
 on: [push, pull_request]
 
